@@ -21,7 +21,7 @@ var myHeadNote=" <YOUR HEADER NOTE GOES HERE> ";
 { //this is the main function to load the library content
        if(event.parameter.name)
           {//verification URL Called
-               return ContactListLibrary.validateUserAndPassForRegistration(event,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
+               return ContactListLibraryV.validateUserAndPassForRegistration(event,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
             }
         else
           {//Load the Page
@@ -33,52 +33,52 @@ var myHeadNote=" <YOUR HEADER NOTE GOES HERE> ";
 //function 1
 function onopen() 
 { //return the main Content
-  return ContactListLibrary.doGet();
+  return ContactListLibraryV.doGet();
 }
 
 //function 2
 function CBgetmyvalue()
 {//used to load your organization list
   
-  return ContactListLibrary.getYourList(myConfigurationSheet);//pass user variable
+  return ContactListLibraryV.getYourList(myConfigurationSheet);//pass user variable
 }
 
 //function 3
 function CBgetAllMyGroup()
 {//used to load user define labels
-    return ContactListLibrary.getLabelasMyGroup(ContactsApp,myConfigurationSheet);
+    return ContactListLibraryV.getLabelasMyGroup(ContactsApp,myConfigurationSheet);
 }
 
 //function 4
 function CBcreatefromArray(z,w)
 {//The main registration function
-   return ContactListLibrary.createfromArray(z,w,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
+   return ContactListLibraryV.createfromArray(z,w,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
 }
 
 //function 5
 function CBsearchThisEmail(thisuseremail)
 {//for edit contact
-   return ContactListLibrary.searchThisEmail(thisuseremail);
+   return ContactListLibraryV.searchThisEmail(thisuseremail);
 }
 
 
 //function 6
 function CBsendpinForDelete(emailforpin)
 {//pin sender for delete
-    return ContactListLibrary.sendpinForDelete(ContactsApp,MailApp,emailforpin);
+    return ContactListLibraryV.sendpinForDelete(ContactsApp,MailApp,emailforpin);
 }
 
 
 //function 7
 function CBdeleteUserForever(myemailtodelete,codefordeleted)
 {//this is deleting your contacts
-      return ContactListLibrary.deleteUserForever(ContactsApp,myemailtodelete,codefordeleted);
+      return ContactListLibraryV.deleteUserForever(ContactsApp,myemailtodelete,codefordeleted);
 }
 
 //function 8
 function CBbeforeVaridation(userValueArray)
 {//email verification sender
-    ContactListLibrary.beforeVaridation(userValueArray,ScriptApp,MailApp);
+    ContactListLibraryV.beforeVaridation(userValueArray,ScriptApp,MailApp);
 }
 
 //function 9

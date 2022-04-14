@@ -17,11 +17,17 @@ var myHeadNote=" <YOUR HEADER NOTE GOES HERE> ";
 
 
 
+
  function doGet(event)
 { //this is the main function to load the library content
        if(event.parameter.name)
           {//verification URL Called
+          
                return ContactListLibraryV.validateUserAndPassForRegistration(event,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
+            }
+            else if(event.parameter.newname)
+            {
+return ContactListLibraryV.validateWithJson(event,MailApp,ContactsApp,myConfigurationSheet,sucessfullNewContactNote,sucessfullEditContactNote);
             }
         else
           {//Load the Page
